@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragments of Thought</title>
+    <style>
+        body {
+            background: #000E28;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            z-index: 2;
+            position: relative;
+        }
+        .text-container {
+            max-width: 600px;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+        }
+        .text {
+            font-size: 24px;
+            margin: 10px 0;
+            filter: blur(5px);
+            transition: filter 3s ease-in-out;
+        }
+        .text:hover {
+            filter: blur(0px);
+        }
+
+        /* Continue Button Styling */
+        .continue-container {
+            margin-top: 30px;
+            min-height: 20px; /* Adds space to make the hover area interactable */
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .continue {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 4s ease-in-out, filter 3s ease-in-out;
+        }
+        .continue-container:hover .continue {
+            opacity: 1;
+            filter: blur(0px);
+        }
+        .continue:hover {
+            background: white;
+            color: #000E28;
+        }
+
+        /* Background Images */
+        .background-image {
+            position: absolute;
+            width: 250px;
+            height: auto;
+            opacity: 0.1;
+            filter: blur(10px);
+            transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out;
+        }
+        .background-image:hover {
+            opacity: 1;
+            filter: blur(1px);
+        }
+
+        /* Random Positions */
+        .image1 { top: 10%; left: 15%; }
+        .image2 { top: 50%; left: 80%; }
+        .image3 { bottom: 15%; right: 20%; }
+        .image4 { top: 10%; left: 5%; }
+    </style>
+</head>
+<body>
+    <!-- Background Images -->
+    <img src="images/processimage2d1.png" class="background-image image1" alt="Process Image 1">
+    <img src="images/processimage2d2.png" class="background-image image2" alt="Process Image 2">
+    <img src="images/processimage2d3.png" class="background-image image3" alt="Process Image 3">
+    <img src="images/processimage2d4.png" class="background-image image4" alt="Process Image 4">
+
+    <div class="content">
+        <div class="text-container" id="text-container">
+            <p class="text">The sun rises.</p>
+            <p class="text">I should feel different.</p>
+            <p class="text">But something is missing.</p>
+            <p class="text">Everything is tinted in yesterday.</p>
+            <p class="text">The weight of dreams lingers.</p>
+            <p class="text">The body wakes. The mind stays behind.</p>
+        </div>
+
+        <div class="continue-container">
+            <a href="page2.2.html" class="continue" id="continue">Continue</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById("text-container").style.opacity = "1";
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
+

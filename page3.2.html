@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight of the Morning</title>
+    <style>
+        body {
+            background: #6FA5BD;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            text-align: left;
+            z-index: 2;
+        }
+        .text {
+            font-size: 24px;
+            margin: 10px 0;
+            opacity: 0;
+            filter: blur(5px);
+            transition: opacity 2s ease-in-out, filter 2s ease-in-out;
+        }
+        .fade-in {
+            opacity: 1 !important;
+        }
+        .fade-in:hover {
+            filter: blur(0px) !important;
+        }
+
+        /* Continue Button Styling */
+        .continue-container {
+            margin-top: 30px;
+            min-height: 20px;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .continue {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 4s ease-in-out, filter 3s ease-in-out;
+        }
+        .continue-container:hover .continue {
+            opacity: 1;
+            filter: blur(0px);
+        }
+        .continue:hover {
+            background: white;
+            color: #000E28;
+        }
+
+        /* Background Images */
+        .background-image {
+            position: absolute;
+            width: 250px;
+            height: auto;
+            opacity: 0.1;
+            filter: blur(10px);
+            transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out;
+        }
+
+        .background-image:hover {
+            opacity: 1;
+            filter: blur(1px);
+        }
+
+        /* Random Positions for the Background Images */
+        .image2 { top: 30%; left: 10%; }
+        .image1 { top: 20%; left: 5%; }
+        .image3 { bottom: 15%; right: 10%; }
+    </style>
+</head>
+<body>
+    <!-- Background Images -->
+    <img src="images/processimage4d1.png" class="background-image image1" alt="Process Image 1">
+    <img src="images/processimage4d2.png" class="background-image image2" alt="Process Image 2">
+    <img src="images/processimage4d3.png" class="background-image image3" alt="Process Image 3">
+
+    <div class="content">
+        <div class="text" id="line1">The sun rises, and it brings no warmth.</div>
+        <div class="text" id="line2">Everything is slow.</div>
+        <div class="text" id="line3">The mirror shows someone I don't recognize.</div>
+        <div class="text" id="line4">Maybe it will be different tomorrow.</div>
+        
+        <div class="continue-container">
+            <a href="page4.2.html" class="continue" id="continue">Continue</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => { document.getElementById("line1").classList.add("fade-in"); }, 1000);
+            setTimeout(() => { document.getElementById("line2").classList.add("fade-in"); }, 3000);
+            setTimeout(() => { document.getElementById("line3").classList.add("fade-in"); }, 5000);
+            setTimeout(() => { document.getElementById("line4").classList.add("fade-in"); }, 7000);
+            setTimeout(() => { document.getElementById("continue").style.opacity = "1"; }, 9000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Static of Memory</title>
+    <style>
+        body {
+            background: #004681;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Aligns text and button to the left */
+        }
+        .text-container {
+            max-width: 600px;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+        .text {
+            font-size: 24px;
+            margin: 10px 0;
+            filter: blur(5px);
+            transition: filter 2s ease-in-out;
+        }
+        .text:hover {
+            filter: blur(0px);
+        }
+        .continue-container {
+            margin-top: 30px;
+        }
+        .continue {
+            opacity: 0;
+            filter: blur(5px);
+            transition: opacity 2s ease-in-out, filter 2s ease-in-out;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            display: inline-block;
+        }
+        .continue-container:hover .continue {
+            opacity: 1;
+            filter: blur(0px);
+        }
+        .continue:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="text-container" id="text-container">
+            <p class="text">There was a time when mornings felt light.</p>
+            <p class="text">When waking up didn’t mean reliving.</p>
+            <p class="text">When sleep wasn’t an escape.</p>
+            <p class="text">But now...</p>
+        </div>
+        
+        <div class="continue-container">
+            <a href="page3.html" class="continue" id="continue">Continue</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById("text-container").style.opacity = "1";
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

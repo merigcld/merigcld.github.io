@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of the Past</title>
+    <style>
+        body {
+            background-image: radial-gradient(
+                circle at center, #FEB870 0, #FEB870, #6FA5BD 100%,
+                #FEB870,
+                #6FA5BD);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align text and button to the left */
+            text-align: left;
+        }
+        .text {
+            font-size: 24px;
+            margin: 10px 0;
+            opacity: 0;
+            filter: blur(5px);
+            transition: opacity 2s ease-in-out, filter 2s ease-in-out;
+        }
+        .fade-in {
+            opacity: 1 !important;
+            filter: blur(0px) !important;
+        }
+        .end {
+            margin-top: 30px;
+            opacity: 0;
+            transition: opacity 3s ease-in-out 5s;
+            font-size: 18px;
+        }
+        .end a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .end a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="text" id="line1">It's morning again.</div>
+        <div class="text" id="line2">And I don't feel any different.</div>
+        <div class="text" id="line3">And yet, the day still goes on.</div>
+        <div class="end" id="end">
+            <a href="landingpage.html">(click to relive)</a>
+            <a href="landingpage2.html">(click to reminisce)</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => { document.getElementById("line1").classList.add("fade-in"); }, 1000);
+            setTimeout(() => { document.getElementById("line2").classList.add("fade-in"); }, 3000);
+            setTimeout(() => { document.getElementById("line3").classList.add("fade-in"); }, 5000);
+            setTimeout(() => { document.getElementById("end").style.opacity = "1"; }, 7000);
+        });
+    </script>
+</body>
+</html>

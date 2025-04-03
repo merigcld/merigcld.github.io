@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matutolypea</title>
+    <style>
+        body {
+            background: #00030A;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .fade-text {
+            font-size: 28px;
+            opacity: 0;
+            filter: blur(5px);
+            transition: opacity 5s ease-in-out, filter 4s ease-in-out;
+        }
+        .fade-text:hover {
+            filter: blur(0px);
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .start-button {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            opacity: 0;
+            filter: blur(5px);
+            transition: opacity 5s ease-in-out, filter 4s ease-in-out;
+        }
+        .button-container:hover .start-button {
+            opacity: 1;
+            filter: blur(0px);
+        }
+        .start-button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="fade-text" id="intro-text">It's morning again.</div>
+        <div class="fade-text" id="second-text" style="margin-top: 10px;">But it doesn't feel like a new day.</div>
+        <div class="button-container">
+            <a href="page1.2.html" class="start-button">Enter</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById("intro-text").style.opacity = "1";
+            }, 1000);
+            setTimeout(() => {
+                document.getElementById("second-text").style.opacity = "1";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

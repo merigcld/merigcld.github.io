@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragments of Thought</title>
+    <style>
+        body {
+            background: #000E28;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        .text-container {
+            max-width: 600px;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+        }
+        .text {
+            font-size: 24px;
+            margin: 10px 0;
+            filter: blur(5px);
+            transition: filter 3s ease-in-out;
+        }
+        .text:hover {
+            filter: blur(0px);
+        }
+        .continue-container {
+            margin-top: 30px;
+        }
+        .continue {
+            opacity: 0;
+            filter: blur(5px);
+            transition: opacity 4s ease-in-out, filter 3s ease-in-out;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            display: inline-block;
+        }
+        .continue-container:hover .continue {
+            opacity: 1;
+            filter: blur(0px);
+        }
+        .continue:hover {
+            background: white;
+            color: #000E28;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="text-container" id="text-container">
+            <p class="text">The sun rises.</p>
+            <p class="text">I should feel different.</p>
+            <p class="text">But something is missing.</p>
+            <p class="text">Everything is tinted in yesterday.</p>
+            <p class="text">The weight of dreams lingers.</p>
+            <p class="text">The body wakes. The mind stays behind.</p>
+        </div>
+        
+        <div class="continue-container">
+            <a href="page2.html" class="continue" id="continue">Continue</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById("text-container").style.opacity = "1";
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
